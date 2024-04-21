@@ -1,0 +1,16 @@
+# Virtual environment
+venv/
+
+# Compiled Python files
+__pycache__/
+
+# Environment variables file (if applicable)
+.env
+
+# IDE files
+.vscode/
+*.code-workspace
+
+# Miscellaneous
+.DS_Store
+.pytest_cache/

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bike Price Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 30px;
+            background-color: #f2f2f2;
+           
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 60px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 80%;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            background-color: #ffffff;
+            color: #495057;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .predicted-price {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+   
+    <form action="/predict" method="post">
+        <h2>Bike Price Prediction</h2>
+        <label for="brand">Brand:</label>
+        <input type="text" id="brand" name="brand"><br><br>
+
+        <label for="model">Model:</label>
+        <input type="text" id="model" name="model"><br><br>
+
+        <label for="year">Year:</label>
+        <input type="number" id="year" name="year"><br><br>
+
+        <label for="seller_type">Seller Type:</label>
+        <input type="text" id="seller_type" name="seller_type"><br><br>
+
+        <label for="owner">Owner:</label>
+        <input type="number" id="owner" name="owner"><br><br>
+
+        <label for="km_driven">KM Driven:</label>
+        <input type="number" id="km_driven" name="km_driven"><br><br>
+
+        <label for="ex-showroom">Ex Showroom Price:</label>
+        <input type="number" id="ex-showroom" name="ex-showroom"><br><br>
+
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if predicted_price %}
+    <div class="predicted-price">
+        <h2>Predicted Price:</h2>
+        <p>{{ predicted_price }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
